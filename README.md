@@ -1,44 +1,38 @@
 # Medibot — AI Medical Chatbot
 
-An AI-powered medical chatbot that uses large language models and retrieval-based question answering to provide responses to user health-related queries.
+An AI-powered medical chatbot that uses Retrieval-Augmented Generation (RAG) to retrieve relevant information from a medical reference book and generate responses using a local Large Language Model.
 
 ## Overview
 
-Medibot is an AI application built with Python that combines a language model with a vector database to retrieve relevant medical information and generate responses to user queries.
-
-The project demonstrates the integration of:
+Medibot is a Python-based AI application that combines:
 
 - Large Language Models
-- Retrieval-based Question Answering
+- Retrieval-Augmented Generation (RAG)
 - Vector Search
-- Backend Application Development
-- Containerization
-- Cloud Deployment Workflows
+- Semantic Embeddings
+- Pinecone Vector Database
+- Flask Web Application
+- Local LLM inference with Ollama
 
-## Tech Stack
+The application retrieves relevant medical information from a medical reference book before generating an answer.
 
-- **Python**
-- **LangChain**
-- **Flask**
-- **OpenAI GPT**
-- **Pinecone**
-- **Docker**
-- **AWS**
-- **GitHub Actions**
-
-## How It Works
+## Architecture
 
 ```text
 User Query
     ↓
-Flask Application
+Flask Web Application
     ↓
-LangChain Pipeline
-    ↓
-Retrieve Relevant Medical Information
+Query Embedding
     ↓
 Pinecone Vector Search
     ↓
-LLM
+Relevant Medical Context
+    ↓
+RAG Prompt
+    ↓
+Ollama
+    ↓
+Llama 3.2 3B
     ↓
 Generated Response
