@@ -7,3 +7,4 @@ langchain-pinecone==0.2.8
 langchain-openai==0.3.24
 langchain-community==0.3.26
 -e .
+langchain-ollama==0.3.10
